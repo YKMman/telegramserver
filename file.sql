@@ -20,7 +20,7 @@ CREATE TABLE refs(
     id SERIAL PRIMARY KEY,
     telegram_name text,
     telegram_id_inviter bigint,
-    telegram_id_invited bigint,
+    telegram_id_invited bigint
 );
 
 CREATE TABLE users(

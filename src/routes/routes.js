@@ -3,6 +3,9 @@ const controller = require('../controllers/controllers')
 
 const router = Router()
 
+router.post('/api', (req, res) => {
+    res.send('hello world')
+})
 router.post("/api/registration", controller.registration)
 router.post('/api/quests', controller.quests)
 
