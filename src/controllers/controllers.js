@@ -21,6 +21,9 @@ const registration = async (req, res) => {
     const telegram_username = user_rows.find((el) => el.title == 'username').value
     const start_param = init_data_rows.find((el) => el.title == 'start_param').value
 
+    console.log(telegram_id, telegram_username, start_param)
+    console.log(pool.connect)
+
     try {
         const isRegistered = await registrationChecked(telegram_id);
 
