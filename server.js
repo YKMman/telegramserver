@@ -11,7 +11,7 @@ app.use(cors())
 
 app.use('/', routes)
 
-app.listen(process.env.PORT, '0.0.0.0', () => {
-    console.log(`App listening at http://0.0.0.0:${process.env.PORT}`);
+app.listen(process.env.PORT, '87.228.12.128', () => {
+    console.log(`App listening at http://87.228.12.128:${process.env.PORT}`);
 })
 
