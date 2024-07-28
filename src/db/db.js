@@ -9,5 +9,12 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
   
+pool.connect((err) => {
+    if (err) {
+      console.error('Connection error', err.stack, err.message, err.name);
+    } else {
+      console.log('Connected to database');
+    }
+});
 
 module.exports = pool;
