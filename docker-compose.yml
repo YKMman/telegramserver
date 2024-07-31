@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: 20011207
       POSTGRES_DB: trucki
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -19,7 +19,7 @@ services:
       DB_HOST: db
       DB_NAME: trucki
       DB_PASSWORD: 20011207
-      DB_PORT: 5432
+      DB_PORT: 5433
     ports:
       - "3000:3000"
     depends_on:
