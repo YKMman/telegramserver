@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: 20011207
       POSTGRES_DB: trucki
     ports:
-      - "5433:5433"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
