@@ -4,12 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "bot:dev": "nodemon ./bot.js",
-    "server:dev": "nodemon ./server.js",
-    "start:dev": "concurrently \"npm run bot:dev\" \"npm run server:dev\"",
-    "bot:prod": "node ./bot.js",
-    "server:prod": "node ./server.js",
-    "kek": "concurrently \"npm run bot:prod\" \"npm run server:prod\""
+    "bot:dev": "node ./bot.js",
+    "server:dev": "node ./server.js",
+    "start": "concurrently \"npm run bot:dev\" \"npm run server:dev\""
   },
   "keywords": [],
   "author": "",
