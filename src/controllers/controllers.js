@@ -69,7 +69,10 @@ const quests = async (req, res) => {
     try {
         const queryCount = await pool.query(queries.returnRefs, [telegram_id])
         const queryTg = await pool.query(queries.returnPublics)
+        const userDB = await pool.query(queries.getUser, [telegram_id])
+
         const data = {
+            user: userDB.rows,
             count: queryCount.rows,
             completed: process.env.CLIENT_FRIENDS_QUEST_COUNT_LIMIT,
             public_link: queryTg.rows

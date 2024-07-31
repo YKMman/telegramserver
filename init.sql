@@ -9,7 +9,7 @@ CREATE TABLE farming(
 
 CREATE TABLE quests(
     id SERIAL PRIMARY KEY,
-    telegram_id: bigint,
+    telegram_id bigint,
     telegram_id_public bigint,
     telegram_id_link text,
     completed boolean NOT NULL DEFAULT false,
