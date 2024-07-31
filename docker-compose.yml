@@ -7,11 +7,12 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 20011207
-      POSTGRES_DB: trucki
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"  
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   app:
     build: .

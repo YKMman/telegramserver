@@ -1,3 +1,7 @@
+CREATE DATABASE trucki;
+
+\c trucki
+
 CREATE TABLE farming(
     id SERIAL PRIMARY KEY,
     telegram_id bigint,
