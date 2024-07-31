@@ -1,18 +1,32 @@
 const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 
 const { dotenv, cors } = require('./src/config/config')
 const routes = require('./src/routes/routes')
 
-const app = express()
-const corsOptions = {
-    origin: 'http://87.228.12.128', // Разрешить запросы с этого IP-адреса
-};
 
-app.use(express.json())
-app.use(cors(corsOptions))
+
+// const clientPath = path.join(__dirname, '../testing/dist');
+const app = express();
+
+// Сервирование статичных файлов из папки dist
+// app.use(express.static(clientPath));
+app.use(express.json());
+app.use(cors());
+
+
+
+// Обработка всех остальных запросов и отправка index.html
+// app.get('/', (req, res) => {
+//     console.log(path.join(__dirname, '../testing/dist'), 'index.html')
+//     res.sendFile(path.join(clientPath, 'index.html'));
+// });
+  
 
 app.use('/', routes)
+
+
 
 app.listen(process.env.PORT, () => {
     console.log(`app listening on ${process.env.PORT}`)

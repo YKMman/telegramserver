@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 20011207
+      POSTGRES_DB: trucki
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: node_app
+    environment:
+      DB_USER: postgres
+      DB_HOST: db
+      DB_NAME: trucki
+      DB_PASSWORD: 20011207
+      DB_PORT: 5432
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  pgadmin:
+    container_name: pgadmin
+    depends_on:
+      - db
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ykirillm@mail.ru
+      PGADMIN_DEFAULT_PASSWORD: 20011207
+    ports:
+      - "5050:80"
+    restart: always
+
+volumes:
+  postgres_data:

@@ -2,9 +2,10 @@ const TelegramBot = require('node-telegram-bot-api');
 
 const { dotenv } = require('./src/config/config')
 
-const webAppUrl = 'https://ykmman.github.io/testing/';
+const webAppUrl = 'https://testing-eight-nu.vercel.app/';
 // const webAppUrl = 'https://t.me/miniAPP_YKM_bot/app'
-// const webAppUrl = 'https://172.16.250.170:5173/testing'
+// const webAppUrl = 'https://127.0.0.1:3000'
+
 
 const bot = new TelegramBot(process.env.API_KEY_BOT, {
     polling: true
