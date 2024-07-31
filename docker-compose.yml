@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   db:
     image: postgres:13
@@ -7,7 +9,7 @@ services:
       POSTGRES_PASSWORD: 20011207
       POSTGRES_DB: trucki
     ports:
-      - "5433:5432"
+      - "5433:5432"  # Внешний порт: 5433, внутренний порт: 5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -19,7 +21,7 @@ services:
       DB_HOST: db
       DB_NAME: trucki
       DB_PASSWORD: 20011207
-      DB_PORT: 5433
+      DB_PORT: 5433  # Внешний порт: 5433
     ports:
       - "3000:3000"
     depends_on:
