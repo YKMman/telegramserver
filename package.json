@@ -6,7 +6,10 @@
   "scripts": {
     "bot:dev": "nodemon ./bot.js",
     "server:dev": "nodemon ./server.js",
-    "start": "concurrently \"npm run bot:dev\" \"npm run server:dev\""
+    "start:dev": "concurrently \"npm run bot:dev\" \"npm run server:dev\"",
+    "bot:prod": "node ./bot.js",
+    "server:prod": "node ./server.js",
+    "start:prod": "concurrently \"npm run bot:prod\" \"npm run server:prod\""
   },
   "keywords": [],
   "author": "",
