@@ -15,12 +15,12 @@ const app = express();
 app.use(express.json());
 
 // Настройка CORS
-const corsOptions = {
-    origin: 'https://testing-eight-nu.vercel.app', // Разрешить запросы только с этого домена
-    optionsSuccessStatus: 200 // Некоторые легаси браузеры (IE11, различные SmartTV) читают статус 204 как "no content"
-};
+// const corsOptions = {
+//     origin: 'https://testing-eight-nu.vercel.app', // Разрешить запросы только с этого домена
+//     optionsSuccessStatus: 200 // Некоторые легаси браузеры (IE11, различные SmartTV) читают статус 204 как "no content"
+// };
   
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 
