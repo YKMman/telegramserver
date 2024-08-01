@@ -3,7 +3,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const { dotenv } = require('./src/config/config')
 
 // # prod link 
-const webAppUrl = 'https://192.168.56.1:5173/';
+const webAppUrl = 'https://testing-eight-nu.vercel.app/';
 
 // # dev link
 // const webAppUrl = 'https://localhost:5173/'
