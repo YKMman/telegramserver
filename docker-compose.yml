@@ -46,4 +46,3 @@ volumes:
   postgres_data:
 
 
-/root/ykm/telegramserver
