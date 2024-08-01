@@ -13,7 +13,14 @@ const app = express();
 // Сервирование статичных файлов из папки dist
 // app.use(express.static(clientPath));
 app.use(express.json());
-app.use(cors());
+
+// Настройка CORS
+const corsOptions = {
+    origin: 'https://testing-eight-nu.vercel.app', // Разрешить запросы только с этого домена
+    optionsSuccessStatus: 200 // Некоторые легаси браузеры (IE11, различные SmartTV) читают статус 204 как "no content"
+};
+  
+app.use(cors(corsOptions));
 
 
 
