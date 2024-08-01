@@ -35,3 +35,10 @@ CREATE TABLE users(
 );
 
 
+INSERT INTO users (telegram_name, telegram_id, ttc_coin) VALUES ('misha', 000, 0);
+INSERT INTO users (telegram_name, telegram_id, ttc_coin) VALUES ('sasha', 001, 0);
+INSERT INTO users (telegram_name, telegram_id, ttc_coin) VALUES ('vanya', 002, 0);
+
+INSERT INTO refs (telegram_name, telegram_id_inviter, telegram_id_invited) VALUES ('misha', 99281932, 0);
+INSERT INTO refs (telegram_name, telegram_id_inviter, telegram_id_invited) VALUES ('sasha', 99281932, 1);
+INSERT INTO refs (telegram_name, telegram_id_inviter, telegram_id_invited) VALUES ('vanya', 99281932, 2);

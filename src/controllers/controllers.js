@@ -71,7 +71,7 @@ const quests = async (req, res) => {
         const queryTg = await pool.query(queries.returnPublics)
         const userDB = await pool.query(queries.getUser, [telegram_id])
 
-        const data = {
+        const data = {  
             user: userDB.rows,
             count: queryCount.rows,
             completed: process.env.CLIENT_FRIENDS_QUEST_COUNT_LIMIT,
@@ -85,11 +85,33 @@ const quests = async (req, res) => {
     // вернуть реферальную ссылку. вернуть количество реферальных друзей. вернуть количество людей, необходимых для того, чтобы получить награду.
 }
 
+const tasks = async (req, res) => {
+    const { telegram_id } = req.body
+
+    try {
+        const queryCount = await pool.query(queries.returnRefs, [telegram_id])
+        const queryTg = await pool.query(queries.returnPublics)
+        const userDB = await pool.query(queries.getUser, [telegram_id])
+
+        const data = {  
+            user: userDB.rows,
+            count: queryCount.rows,
+            completed: process.env.CLIENT_FRIENDS_QUEST_COUNT_LIMIT,
+            public_link: queryTg.rows,
+            award_invited_friends: process.env.AWARD_FRIENDS_INVITE
+        }
+        res.status(200).send(data)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 
 
 module.exports = {
     registration,
-    quests
+    quests,
+    tasks
 }
 
 
