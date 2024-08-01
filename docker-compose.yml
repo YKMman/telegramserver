@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 20011207
-      POSTGRES_DB: postgres
+      POSTGRES_DB: trucki
     ports:
       - "5432:5432"  
     volumes:
