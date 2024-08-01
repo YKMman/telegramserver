@@ -19,7 +19,7 @@ services:
     container_name: node_app
     environment:
       DB_USER: postgres
-      DB_HOST: db
+      DB_HOST: postgres_db #мне кажется здесь должно быть имя postgres_db (до этого было db)
       DB_NAME: trucki
       DB_PASSWORD: 20011207
       DB_PORT: 5432  
