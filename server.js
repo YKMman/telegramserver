@@ -33,9 +33,9 @@ app.use(cors());
 app.use('/', routes);
 
 const options = {
-    key: fs.readFileSync('/etc/ssl/certs/privkey.pem'),
-    cert: fs.readFileSync('/etc/ssl/certs/fullchain.pem')
-  };
+    key: fs.readFileSync(path.resolve(__dirname, 'certificates/privkey.pem')),
+    cert: fs.readFileSync(path.resolve(__dirname, 'certificates/fullchain.pem'))
+};
 
 https.createServer(options, app).listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
