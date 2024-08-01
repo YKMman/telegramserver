@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./etc/ssl/certs
+      - ./certificates:/app/certificates
 
   pgadmin:
     container_name: pgadmin
