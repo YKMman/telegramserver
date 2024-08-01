@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./certificates:/etc/ssl/certs
+      - ./cert/cert.pem
 
   pgadmin:
     container_name: pgadmin
@@ -44,3 +44,6 @@ services:
 
 volumes:
   postgres_data:
+
+
+/root/ykm/telegramserver
