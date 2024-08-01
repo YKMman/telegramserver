@@ -33,8 +33,8 @@ app.use(cors());
 app.use('/', routes);
 
 const options = {
-  key: fs.readFileSync('/certificates/privkey.pem'),
-  cert: fs.readFileSync('/certificates/fullchain.pem')
+    key:fs.readFileSync(path.join(__dirname,'./cert/key.pem')),
+    cert:fs.readFileSync(path.join(__dirname,'./cert/cert.pem'))
 };
 
 https.createServer(options, app).listen(process.env.PORT, () => {
